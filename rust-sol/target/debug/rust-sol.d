@@ -1,1 +1,0 @@
-/home/okabe/graveyard/aoc/rust-sol/target/debug/rust-sol: /home/okabe/graveyard/aoc/rust-sol/src/day1/mod.rs /home/okabe/graveyard/aoc/rust-sol/src/day1/sol.rs /home/okabe/graveyard/aoc/rust-sol/src/main.rs
