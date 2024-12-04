@@ -1,6 +1,6 @@
 pub mod part1 {
-	use std::fs::File;
-	use std::io::{self, BufRead, BufReader};
+    use std::fs::File;
+    use std::io::{self, BufRead, BufReader};
     /// This function reads the input from the file `day1.in`
     /// Returns: Tuple(Array, Array)
     /// An array can be used here because the size of the file is known before compile time(1000 lines)
