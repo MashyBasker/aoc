@@ -52,6 +52,36 @@ pub mod part1 {
     /// Driver function for Day 1 Part 1 of AoC '24
     pub fn driver(input: &str) -> i32 {
         let (left, right) = preprocess_input(input).unwrap();
-        return distance_sum(left, right);
+        distance_sum(left, right)
     }
+}
+
+
+pub mod part2 {
+    use crate::day1::sol::part1::preprocess_input;
+
+    pub fn binary_search_frequency(element: i32, array: [i32; 1000]) -> i32 {
+        let lower_bound = array.partition_point(|&x| x < element);
+        let upper_bound = array.partition_point(|&x| x <= element);
+        if lower_bound == upper_bound {
+            0
+        } else {
+            (upper_bound - lower_bound) as i32
+        }
+    }
+
+    pub fn find_similarity_score(left_array: [i32; 1000], right_array: [i32; 1000]) -> i32 {
+        let mut score = 0;
+        for ele in left_array {
+            let freq = binary_search_frequency(ele, right_array);
+            score += ele * freq;
+        }
+        score
+    }
+
+    pub fn driver(input:&str) -> i32 {
+        let (left, right) = preprocess_input(input).unwrap();
+        find_similarity_score(left, right)
+    }
+
 }
